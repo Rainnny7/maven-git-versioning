@@ -32,3 +32,6 @@ This plugin seamlessly converts standard "-SNAPSHOT" versions into a more descri
     </pluginRepositories>
     ```
 2. Build your project with `mvn package` (or `mvn git-versioning:versioning` if you just want to see data)
+
+# Output
+![Output Jar Example](https://cdn.rainnny.club/CNUchQGuR5Mk.png)
