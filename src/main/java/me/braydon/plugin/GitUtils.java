@@ -72,6 +72,8 @@ public final class GitUtils {
                 commitsSinceLastTag++; // Increment commits since last tag
                 if (commit.getParentCount() > 0) { // Get the parent commit
                     commit = walk.parseCommit(commit.getParent(0));
+                } else {
+                    break;
                 }
             }
         } catch (IOException | GitAPIException ex) {
