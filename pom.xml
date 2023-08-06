@@ -86,6 +86,14 @@
         </pluginManagement>
     </build>
 
+    <!-- Distribution Repos -->
+    <distributionManagement>
+        <repository>
+            <id>rainnny-repo-public</id>
+            <url>https://maven.rainnny.club/public</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
