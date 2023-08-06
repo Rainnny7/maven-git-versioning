@@ -70,7 +70,9 @@ public final class GitUtils {
                     return new AbstractMap.SimpleEntry<>(latestCommit.getName(), commitsSinceLastTag);
                 }
                 commitsSinceLastTag++; // Increment commits since last tag
-                commit = walk.parseCommit(commit.getParent(0)); // Get the parent commit
+                if (commit.getParentCount() > 0) { // Get the parent commit
+                    commit = walk.parseCommit(commit.getParent(0));
+                }
             }
         } catch (IOException | GitAPIException ex) {
             System.err.println("Failed fetching git data:");
