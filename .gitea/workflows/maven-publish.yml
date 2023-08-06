@@ -32,6 +32,19 @@ jobs:
         with:
           maven-version: 3.9.4
 
+      # Configure Maven settings
+      - name: Maven Settings
+        uses: https://github.com/s4u/maven-settings-action@v2.8.0
+        with:
+          servers: |
+            [
+              {
+                "id": "rainnny-repo-public",
+                "username": "${{ secrets.PRIVATE_MAVEN_USER }}",
+                "password": "${{ secrets.PRIVATE_MAVEN_PASS }}"
+              }
+            ]
+
       # Publish to Maven
       - name: Publish to Maven
         run: mvn deploy -B -Dstyle.color=always --update-snapshots
